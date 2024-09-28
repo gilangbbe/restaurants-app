@@ -1,0 +1,137 @@
+navbar-head {
+  font-size: 2em;
+  #hamburger {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+  }
+  .navbar-container {
+    position: relative;
+  }
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    padding: 1em;
+    gap: 10px;
+  }
+  p {
+    font-family: 'Playwrite DE Grund';
+    span {
+      font-family: 'Dancing Script';
+      color: red;
+    }
+  }
+  @media (max-width: 900px) {
+    .navigation {
+      display: none;
+    }
+    .drawer {
+      position: absolute;
+      top: auto;
+      left: 0;
+      right: 0;
+      background-color: #fff;
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      z-index: 999;
+    }
+
+    .drawer a {
+      font-family: 'Playwrite DE Grund';
+      display: block;
+      font-size: 1em;
+      padding: 10px 1em;
+      text-decoration: none;
+      color: black;
+    }
+
+    .drawer a:hover {
+      background-color: #ddd;
+    }
+
+    .overlay {
+      position: fixed;
+      top: auto;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 998;
+    }
+
+    .overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+    button {
+      top: 1rem;
+      right: 1rem;
+      width: 3rem;
+      height: 3rem;
+      background: none;
+      border: none;
+      color: inherit;
+      padding: 0.5rem;
+    }
+    button:focus {
+      outline-color: currentColor;
+    }
+
+    button svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    button .translate {
+      transition: transform 0.25s ease-in-out;
+      transition-delay: 0.25s;
+    }
+    button .rotate {
+      transition: transform 0.25s ease-in-out;
+      transition-delay: 0s;
+    }
+    button.open .translate {
+      transform: translateY(0);
+      transition-delay: 0s;
+    }
+    button.open .rotate {
+      transform: rotate(0);
+      transition-delay: 0.25s;
+    }
+  }
+
+  @media (min-width: 901px) {
+    .navbar {
+      justify-content: space-between;
+    }
+    .navbar .navigation {
+      display: inline-block;
+      font-family: 'Playwrite DE Grund';
+      display: block;
+      font-size: 1em;
+
+      a {
+        text-decoration: none;
+        color: black;
+        margin-right: 20px;
+      }
+    }
+
+    .navbar button {
+      display: none;
+    }
+
+    .drawer {
+      display: none;
+    }
+
+    .overlay {
+      display: none;
+    }
+  }
+}

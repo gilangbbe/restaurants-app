@@ -1,0 +1,47 @@
+@use 'vendors';
+
+* {
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  padding: 8px;
+  background-color: #bf1722;
+  color: white;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+#restaurant-card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 0 3%;
+}
+
+@media (max-width: 600px) {
+  #restaurant-card-container {
+    grid-template-columns: 1fr;
+  }
+}
+@media (min-width: 601px) and (max-width: 900px) {
+  #restaurant-card-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 901px) {
+  #restaurant-card-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

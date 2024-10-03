@@ -34,5 +34,4 @@ class FooterComponent extends LitElement {
   }
 }
 
-// Register the custom element
 customElements.define('footer-component', FooterComponent);

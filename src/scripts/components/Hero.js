@@ -142,6 +142,7 @@ class HeroElement extends LitElement {
   }
 
   _onKeyDown(event) {
+    event.stopPropagation();
     if (event.key === 'Enter') {
       const imgElement = event.target.querySelector('img');
       this._changeJumbotron(imgElement.attributes.src.value);
@@ -149,6 +150,7 @@ class HeroElement extends LitElement {
   }
 
   _onClick(event) {
+    event.stopPropagation();
     const srcImg = event.target.attributes.src.value;
     this._changeJumbotron(srcImg);
   }

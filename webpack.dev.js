@@ -16,5 +16,6 @@ module.exports = merge(common, {
       },
     },
     watchFiles: ['src/**/*'],
+    compress: true,
   },
 });

@@ -1,13 +1,8 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../../sass/main.scss';
 import './components/index';
-import mainPage from './pages';
-
-const routes = {
-  '/': mainPage,
-};
-
-const detectRoute = () => routes[window.location.pathname];
+import swRegister from './utils/sw-register';
+import App from './views/app';
 
 const initPages = () => {
   const header = document.querySelector('header');
@@ -21,9 +16,19 @@ const initPages = () => {
   }
 };
 
-window.addEventListener('DOMContentLoaded', async () => {
-  initPages();
+const app = new App({
+  content: document.querySelector('#main-content'),
+});
 
-  const route = detectRoute();
-  route.init();
+window.addEventListener('DOMContentLoaded', () => {
+  initPages();
+});
+
+window.addEventListener('hashchange', () => {
+  app.renderPage();
+});
+
+window.addEventListener('load', () => {
+  app.renderPage();
+  swRegister();
 });

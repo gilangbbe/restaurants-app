@@ -12,7 +12,8 @@ class NavBar extends LitWithoutShadowDom {
     this.isOpen = false;
   }
 
-  toggleDrawer() {
+  toggleDrawer(event) {
+    event.stopPropagation();
     this.isOpen = !this.isOpen;
 
     const drawer = this.querySelector('.drawer');
@@ -93,7 +94,7 @@ class NavBar extends LitWithoutShadowDom {
           <p>Hunger <span>Apps</span></p>
           <div class="navigation">
             <a href="/">Home</a>
-            <a href="#">Favorite</a>
+            <a href="#/favorite">Favorite</a>
             <a href="https://www.linkedin.com/in/gilangbbe/">About Us</a>
           </div>
         </div>
@@ -103,7 +104,7 @@ class NavBar extends LitWithoutShadowDom {
         ></div>
         <div class="drawer ${this.isOpen ? 'open' : ''}">
           <a href="/">Home</a>
-          <a href="#">Favorite</a>
+          <a href="#/favorite">Favorite</a>
           <a href="https://www.linkedin.com/in/gilangbbe/">About Us</a>
         </div>
       </div>

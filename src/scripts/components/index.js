@@ -2,3 +2,8 @@ import './Hero';
 import './NavBar';
 import './RestaurantCard';
 import './Footer';
+import './Detail';
+import './CustomerReviewCard';
+import './ReviewOverlay';
+import './ErrorAlert';
+import './LikeButton';

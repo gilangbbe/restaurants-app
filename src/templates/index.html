@@ -3,7 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Restaurant Apps</title>
+    <meta name="description" content="Free restaurant catalogue for you" />
+    <meta name="theme-color" content="#FFFFFF" />
+
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+    <link rel="icon" href="./favicon.png" />
+    <link rel="manifest" href="./app.webmanifest" />
+    <title>Hunger Apps</title>
   </head>
   <body>
     <a href="#restaurant-card-container" class="skip-link">Menuju ke konten</a>
@@ -11,25 +17,8 @@
       <navbar-head></navbar-head>
     </header>
     <main>
-      <hero-element></hero-element>
-      <h2
-        style="
-          width: 100%;
-          text-align: center;
-          font-size: 2rem;
-          margin-bottom: 2%;
-          font-family: 'Dancing Script';
-          font-weight: bolder;
-        "
-      >
-        Discover Restaurant
-      </h2>
-      <div id="restaurant-card-container">
-        <restaurant-card isLoading></restaurant-card>
-        <restaurant-card isLoading></restaurant-card>
-        <restaurant-card isLoading></restaurant-card>
-        <restaurant-card isLoading></restaurant-card>
-      </div>
+      <error-alert></error-alert>
+      <div id="main-content"></div>
     </main>
     <footer>
       <footer-component></footer-component>

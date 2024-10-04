@@ -60,10 +60,18 @@ module.exports = {
       runtimeCaching: [
         {
           urlPattern: ({ url }) =>
-            url.href.startsWith('https://restaurant-api.dicoding.dev'),
+            url.href.startsWith('https://restaurant-api.dicoding.dev/list'),
           handler: 'StaleWhileRevalidate',
           options: {
-            cacheName: 'dicoding-restaurant-api',
+            cacheName: 'dicoding-restaurant-list-api',
+          },
+        },
+        {
+          urlPattern: ({ url }) =>
+            url.href.startsWith('https://restaurant-api.dicoding.dev/detail'),
+          handler: 'NetworkFirst',
+          options: {
+            cacheName: 'dicoding-restaurant-detail-api',
           },
         },
         {

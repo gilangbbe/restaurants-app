@@ -130,6 +130,9 @@ class RestaurantCard extends LitElement {
           class="card-img"
           src="${restaurant.pictureId}"
           alt="${restaurant.name}"
+          loading="lazy"
+          width="400"
+          height="200"
         />
         <div class="card-overlay">
           <p>${restaurant.city}</p>

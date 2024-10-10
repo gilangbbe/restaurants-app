@@ -11,18 +11,18 @@ class CustomerReviewCard extends LitElement {
       font-family: 'Playwrite DE Grund';
     }
 
-    #review-card {
+    .review-card {
       width: 100%;
       display: flex;
       flex-direction: column;
       font-size: 0.7em;
     }
 
-    #review-name {
+    .review-name {
       font-weight: bolder;
     }
 
-    #review-date {
+    .review-date {
       font-weight: lighter;
       font-size: 0.7em;
     }
@@ -34,12 +34,12 @@ class CustomerReviewCard extends LitElement {
 
   render() {
     return html`
-      <div id="review-card">
-        <p id="review-name">
+      <div class="review-card">
+        <p class="review-name">
           ${this.customerReview.name} -
-          <span id="review-date">${this.customerReview.date}</span>
+          <span class="review-date">${this.customerReview.date}</span>
         </p>
-        <p id="review-text">${this.customerReview.review}</p>
+        <p class="review-text">${this.customerReview.review}</p>
       </div>
     `;
   }

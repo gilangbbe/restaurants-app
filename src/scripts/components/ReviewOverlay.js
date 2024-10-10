@@ -164,7 +164,7 @@ class ReviewOverlay extends LitElement {
           </div>
           ${this.loading
             ? html`<div class="loading-spinner"></div>`
-            : html`<button type="submit">➤ Send</button>`}
+            : html`<button id="reviewButton" type="submit">➤ Send</button>`}
         </form>
       </div>
     `;

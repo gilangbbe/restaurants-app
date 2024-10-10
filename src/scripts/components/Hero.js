@@ -69,14 +69,20 @@ class HeroElement extends LitElement {
 
   constructor() {
     super();
-    this.srcImage = './images/heros/hero-image_1.jpg';
+    this.srcImage = './images/heros/hero-image_1-large.jpg';
   }
 
   render() {
     return html`
       <div>
         <div class="hero-container show">
-          <img class="hero-image hero-jumbo" src="${this.srcImage}" alt="" />
+          <picture>
+            <source
+              media="(max-width: 600px)"
+              srcset="${this.srcImage.replace('large', 'small')}"
+            />
+            <img class="hero-image hero-jumbo" src="${this.srcImage}" alt="" />
+          </picture>
         </div>
       </div>
       <div class="grid-container">
@@ -86,11 +92,17 @@ class HeroElement extends LitElement {
           @keydown="${this._onKeyDown}"
           tabindex="0"
         >
-          <img
-            class="hero-image hero-1"
-            src="./images/heros/hero-image_1.jpg"
-            alt="Best restaurant to hangout"
-          />
+          <picture>
+            <source
+              media="(max-width: 600px)"
+              srcset="./images/heros/hero-image_1-small.jpg"
+            />
+            <img
+              class="hero-image hero-1"
+              src="./images/heros/hero-image_1-large.jpg"
+              alt="Best restaurant to hangout"
+            />
+          </picture>
         </div>
         <div
           class="grid-item"
@@ -98,11 +110,17 @@ class HeroElement extends LitElement {
           @keydown="${this._onKeyDown}"
           tabindex="0"
         >
-          <img
-            class="hero-image hero-2"
-            src="./images/heros/hero-image_2.jpg"
-            alt="Get that vibes"
-          />
+          <picture>
+            <source
+              media="(max-width: 600px)"
+              srcset="./images/heros/hero-image_2-small.jpg"
+            />
+            <img
+              class="hero-image hero-2"
+              src="./images/heros/hero-image_2-large.jpg"
+              alt="Get that vibes"
+            />
+          </picture>
         </div>
         <div
           class="grid-item"
@@ -110,11 +128,17 @@ class HeroElement extends LitElement {
           @keydown="${this._onKeyDown}"
           tabindex="0"
         >
-          <img
-            class="hero-image hero-3"
-            src="./images/heros/hero-image_3.jpg"
-            alt="Best food in the world"
-          />
+          <picture>
+            <source
+              media="(max-width: 600px)"
+              srcset="./images/heros/hero-image_3-small.jpg"
+            />
+            <img
+              class="hero-image hero-3"
+              src="./images/heros/hero-image_3-large.jpg"
+              alt="Best food in the world"
+            />
+          </picture>
         </div>
         <div
           class="grid-item"
@@ -122,11 +146,17 @@ class HeroElement extends LitElement {
           @keydown="${this._onKeyDown}"
           tabindex="0"
         >
-          <img
-            class="hero-image hero-4 "
-            src="./images/heros/hero-image_4.jpg"
-            alt="Search for the best chef"
-          />
+          <picture>
+            <source
+              media="(max-width: 600px)"
+              srcset="./images/heros/hero-image_4-small.jpg"
+            />
+            <img
+              class="hero-image hero-4 "
+              src="./images/heros/hero-image_4-large.jpg"
+              alt="Search for the best chef"
+            />
+          </picture>
         </div>
       </div>
     `;
@@ -163,7 +193,7 @@ class HeroElement extends LitElement {
     const animation = anime
       .timeline({
         targets: this.shadowRoot.querySelector('.remove'),
-        duration: 200,
+        duration: 100,
         easing: 'easeInOutQuad',
       })
       .add({

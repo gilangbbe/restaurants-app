@@ -189,7 +189,10 @@ class Detail extends LitElement {
             ${this.createList(this.restaurant.categories, '#ffffff')}
           </ul>
         </div>
-        <like-button .restaurant=${this.restaurant}></like-button>
+        <like-button
+          class="like-button"
+          .restaurant=${this.restaurant}
+        ></like-button>
       </div>
       <div id="restaurant-description">
         <p class="dancing-font" style="font-size: 1.5em;">Description</p>

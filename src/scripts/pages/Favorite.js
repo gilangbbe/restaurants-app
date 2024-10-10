@@ -21,7 +21,7 @@ const Favorite = {
         }
       } else {
         container.innerHTML =
-          '<h2 style="padding: 1em">No favorite restaurants<h2>';
+          '<h2 class="favorite__not__found" style="padding: 1em">No favorite restaurants<h2>';
       }
     } catch (error) {
       triggerError(error.message);

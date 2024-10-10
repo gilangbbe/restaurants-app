@@ -6,7 +6,6 @@ const Detail = {
   render() {
     return `
       <div id="detail-container">
-        <!-- Loading indicator will be added dynamically here -->
       </div>
     `;
   },

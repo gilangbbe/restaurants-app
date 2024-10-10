@@ -7,29 +7,21 @@ class FooterComponent extends LitElement {
   }
 
   static styles = css`
-    footer {
+    div {
       background-color: #282c34;
       color: white;
       text-align: center;
       padding: 20px;
-      margin-top: 5%;
-    }
-    a {
-      color: #61dafb;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-    a:hover {
-      text-decoration: underline;
+      min-height: 4em;
     }
   `;
 
   render() {
     return html`
-      <footer>
+      <div>
         <h3>${this.title}</h3>
-        <p>&copy; ${new Date().getFullYear()} Biru</p>
-      </footer>
+        <p>&copy; 2024 Biru</p>
+      </div>
     `;
   }
 }

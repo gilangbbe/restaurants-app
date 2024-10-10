@@ -5,15 +5,16 @@
 
 /** @type {import('jest').Config} */
 const config = {
-  testMatch: [
-    '**/tests/**/*.test.[jt]s?(x)',
-  ],
+  testMatch: ['**/tests/**/*.test.[jt]s?(x)'],
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
-  setupFiles: ['fake-indexeddb/auto'],
+  setupFiles: ['fake-indexeddb/auto', '<rootDir>/jest-setup.js'],
 
   // The test environment that will be used for testing
   testEnvironment: 'jsdom',
+  transformIgnorePatterns: [
+    'node_modules/(?!(testing-library__dom|@open-wc|lit-html|lit-element|pure-lit|lit-element-state-decoupler|lit|@lit)/)',
+  ],
 
   // A map from regular expressions to paths to transformers
   transform: {

@@ -51,7 +51,11 @@ class HeroElement extends LitElement {
 
     @media (max-width: 600px) {
       .hero-container {
-        height: 10em;
+        height: 18em;
+      }
+
+      .grid-container {
+        gap: 10px;
       }
     }
     @media (min-width: 601px) and (max-width: 900px) {
@@ -78,6 +82,7 @@ class HeroElement extends LitElement {
         <div class="hero-container show">
           <picture>
             <source
+              class="hero-jumbo-small"
               media="(max-width: 600px)"
               srcset="${this.srcImage.replace('large', 'small')}"
             />
@@ -187,6 +192,7 @@ class HeroElement extends LitElement {
 
   _changeJumbotron(srcImg) {
     const jumbotron = this.shadowRoot.querySelector('.hero-jumbo');
+    const jumbotronSmall = this.shadowRoot.querySelector('.hero-jumbo-small');
     const container = this.shadowRoot.querySelector('.hero-container');
     container.classList.remove('show');
     container.classList.add('remove');
@@ -206,6 +212,7 @@ class HeroElement extends LitElement {
     animation.finished.then(() => {
       container.classList.add('show');
       jumbotron.src = srcImg;
+      jumbotronSmall.srcset = srcImg.replace('large', 'small');
       this.requestUpdate();
     });
   }

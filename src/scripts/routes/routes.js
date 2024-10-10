@@ -1,4 +1,4 @@
-import MainPage from '../pages/mainPage';
+import MainPage from '../pages/MainPage';
 import Favorite from '../pages/Favorite';
 import Detail from '../pages/Detail';
 

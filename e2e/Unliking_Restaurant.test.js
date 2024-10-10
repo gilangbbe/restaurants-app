@@ -2,6 +2,7 @@ Feature('Unliking restaurant');
 
 Before(({ I }) => {
   I.amOnPage('/');
+  I.wait(1);
 
   I.seeElement('restaurant-card');
   I.click(locate('restaurant-card').first());

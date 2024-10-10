@@ -18,7 +18,6 @@ module.exports = merge(common, {
       },
     },
     watchFiles: ['src/**/*'],
-    compress: true,
   },
   plugins: [new BundleAnalyzerPlugin()],
 });

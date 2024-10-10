@@ -13,6 +13,14 @@ window.addEventListener('hashchange', () => {
 });
 
 window.addEventListener('load', () => {
+  const skipLink = document.querySelector('.skip-link');
+  skipLink.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    document.querySelector('#main-content').scrollIntoView();
+    skipLink.blur();
+  });
+
   app.renderPage();
   swRegister();
 });

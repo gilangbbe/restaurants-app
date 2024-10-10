@@ -14,7 +14,7 @@ Before(({ I }) => {
   });
 });
 
-Scenario('Showing liked movies', ({ I }) => {
+Scenario('Showing liked restaurants', ({ I }) => {
   I.amOnPage('/#/favorite');
   I.seeElement('restaurant-card');
 });

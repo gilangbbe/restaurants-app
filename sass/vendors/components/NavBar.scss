@@ -108,6 +108,10 @@ navbar-head {
   @media (min-width: 901px) {
     .navbar {
       justify-content: space-between;
+
+      p {
+        min-height: 44px;
+      }
     }
     .navbar .navigation {
       display: inline-block;
@@ -116,9 +120,11 @@ navbar-head {
       font-size: 1em;
 
       a {
+        display: inline-block;
         text-decoration: none;
         color: black;
         margin-right: 20px;
+        min-height: 44px;
       }
     }
 
